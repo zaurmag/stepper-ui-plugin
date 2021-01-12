@@ -17,11 +17,15 @@
                 {{ init() }}
             </div>
             <ul class="steps-list">
-                <li class="steps-item" v-for="(item, idx) in steps.length" @click="setActive(idx)"><span>{{ item }}</span> Шаг {{ item }}</li>
+                <li
+                    :class="['steps-item', {'active': this.activeIndex === idx}]"
+                    v-for="(item, idx) in steps.length"
+                    @click="setActive(idx)"><span>{{ item }}</span> Шаг {{ item }}</li>
             </ul>
             <div>
-                <button class="btn">Назад</button>
-                <button class="btn primary">Вперед</button>
+                <button class="btn" @click="prev()" :disabled="isFirstStep">Назад</button>
+                <button class="btn primary" @click="nextOfFinish(); isLastStep" v-if="!isLastStep">Вперед</button>
+                <button class="btn primary" @click="reset()" v-else>Сбросить и начать заново</button>
             </div>
         </div>
     </div>

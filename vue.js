@@ -36,13 +36,16 @@ const App = {
     prev() {
       // когда нажимаем кнопку назад
       this.activeIndex-=1;
+      this.setActive(this.activeIndex);
     },
     reset() {
       // начать заново
+      this.activeIndex = 0;
     },
     nextOfFinish() {
       // кнопка вперед или закончить
       this.activeIndex+=1;
+      this.setActive(this.activeIndex);
     },
     setActive(idx) {
       // когда нажимаем на определенный шаг
@@ -55,6 +58,16 @@ const App = {
     // 1. текущий выбранный шаг
     // 2. выключена ли кнопка назад
     // 3. находимся ли мы на последнем шаге
+
+    // Если на первом шаге
+    isFirstStep() {
+      return this.activeIndex === 0;
+    },
+
+    // Если на посленем шаге
+    isLastStep() {
+      return this.activeIndex + 1 === this.steps.length;
+    }
   }
 }
 
