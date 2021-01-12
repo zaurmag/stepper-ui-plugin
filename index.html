@@ -14,11 +14,11 @@
 
         <div class="steps">
             <div class="steps-content">
-                {{ init() }}
+                {{ init }}
             </div>
             <ul class="steps-list">
                 <li
-                    :class="['steps-item', {'active': this.activeIndex === idx}, {'active done': this.activeIndex > item - 1}]"
+                    :class="['steps-item', {'active': activeIndex === idx}, {'active done': activeIndex > idx}]"
                     v-for="(item, idx) in steps.length"
                     @click="setActive(idx)"><span>{{ item }}</span> Шаг {{ item }}</li>
             </ul>

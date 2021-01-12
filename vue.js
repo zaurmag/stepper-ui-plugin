@@ -30,13 +30,6 @@ const App = {
     }
   },
   methods: {
-    init() {
-      if(this.activeIndex === 0) {
-        this.stepText = this.steps[0].text;
-      }
-
-      return this.stepText;
-    },
     prev() {
       // когда нажимаем кнопку назад
       this.activeIndex-=1;
@@ -62,6 +55,14 @@ const App = {
     // 1. текущий выбранный шаг
     // 2. выключена ли кнопка назад
     // 3. находимся ли мы на последнем шаге
+
+    init() {
+      if(this.activeIndex === 0) {
+        this.stepText = this.steps[0].text;
+      }
+
+      return this.stepText;
+    },
 
     // Если на первом шаге
     isFirstStep() {
