@@ -188,8 +188,7 @@ h3 {
 
 .steps-list {
   list-style: none;
-  margin: 0;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -214,4 +213,8 @@ h3 {
 .steps-item.active span {
   font-weight: bold;
   color: #ffffff;
+}
+
+.steps-item.done span {
+  color: #383838;
 }
