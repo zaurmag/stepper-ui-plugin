@@ -24,7 +24,7 @@
             </ul>
             <div>
                 <button class="btn" @click="prev()" :disabled="isFirstStep">Назад</button>
-                <button class="btn primary" @click="nextOfFinish(); isLastStep" v-if="!isLastStep">Вперед</button>
+                <button class="btn primary" @click="nextOfFinish()" v-if="!isLastStep">Вперед</button>
                 <button class="btn primary" @click="reset()" v-else>Сбросить и начать заново</button>
             </div>
         </div>
